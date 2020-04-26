@@ -19,8 +19,14 @@ class PublicController extends Controller
 
   public function blog()
   {
-    $post = Post::where('status','publish')->paginate(1);
+    $post = Post::where('status','publish')->latest()->paginate(1)->onEachSide(1);
     return view('public.blog', compact('post'));
+  }
+
+  public function viewblog($slug)
+  {
+    $post = Post::where('slug',$slug)->first();
+    return view('public.viewblog', compact('post'));
   }
 
 }

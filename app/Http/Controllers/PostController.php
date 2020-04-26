@@ -17,7 +17,7 @@ class PostController extends Controller
 
     public function index()
     {
-      $post = Post::paginate(10);
+      $post = Post::latest()->paginate(10);
       return view('admin.post.index', compact('post'));
     }
 
@@ -50,7 +50,7 @@ class PostController extends Controller
                   'gambar' => 'public/uploads/posts/'.$new_gambar
         ]);
         $gambar->move('public/uploads/posts', $new_gambar);
-        $post->tags()->attach($request->tags);        
+        $post->tags()->attach($request->tags);
         Alert::success('Added', 'Data berhasil ditambahkan!');
         return redirect()->route('post.index');
     }
@@ -63,7 +63,7 @@ class PostController extends Controller
 
 
     public function edit($id)
-    {
+    {      
       $tags = Tags::all();
       $category = Category::all();
       $post = Post::findOrFail($id);
@@ -101,7 +101,7 @@ class PostController extends Controller
                   ];
       }
       $post->tags()->sync($request->tags);
-      $post->update($post_data);      
+      $post->update($post_data);
       Alert::success('Saved', 'Data berhasil disimpan!');
       return redirect()->route('post.index');
     }

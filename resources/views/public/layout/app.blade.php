@@ -10,12 +10,12 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{asset('public/img/favicon.png')}}" rel="icon">
+  <link href="{{asset('favicon.ico')}}" rel="icon">
   <link href="{{asset('public/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
   <!-- Stuff that Makes Awesome Stuff Awesomer -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  
+
 
   <!-- Vendor CSS Files -->
   <link href="{{asset('public/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -27,6 +27,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{{asset('public/css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('public/css/font-awesome.min.css')}}" rel="stylesheet">
 
 </head>
 
@@ -57,7 +58,14 @@
   <script src="{{asset('public/vendor/venobox/venobox.min.js')}}"></script>
   <script src="{{asset('public/vendor/owl.carousel/owl.carousel.min.js')}}"></script>
   <script src="{{asset('public/vendor/aos/aos.js')}}"></script>
-
+  <script>
+    function openSearch() {
+      document.getElementById("myOverlay").style.display = "block";
+    }
+    function closeSearch() {
+      document.getElementById("myOverlay").style.display = "none";
+    }
+  </script>
   <!-- Template Main JS File -->
   <script src="{{asset('public/js/main.js')}}"></script>
 

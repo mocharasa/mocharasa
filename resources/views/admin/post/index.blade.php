@@ -54,7 +54,7 @@
                                                             @endif
                                                           </td>
 														  <td class="text-center py-0 my-0">
-                                                            <a href="{{route('post.show', $hasil->id)}}" class="btn btn-secondary btn-sm"><i class="fa fa-info-circle"></i></a>
+                                                            <a href="{{route('post.show', $hasil->id)}}" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
                                                             <a href="{{route('post.edit', $hasil->id)}}" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a>
                                                             <a href="#" data-toggle="modal" data-target="#hapus{{$hasil->id}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                                                           </td>

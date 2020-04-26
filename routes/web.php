@@ -7,9 +7,14 @@ Auth::routes();
 Route::group(['public'], function(){
   Route::get('/', 'PublicController@index')->name('public.home');
   Route::get('/blog', 'PublicController@blog')->name('public.blog');
+  Route::get('/blog/{slug}', 'PublicController@viewblog')->name('public.viewblog');
   Route::get('/tentang', 'PublicController@tentang')->name('public.tentang');
   Route::get('/galeri', 'PublicController@galeri')->name('public.galeri');
   Route::get('/kontak', 'PublicController@kontak')->name('public.kontak');
+});
+
+Route::get('/viewblog', function(){
+  return view('public.viewblog');
 });
 
 Route::group(['middleware' => 'auth'], function(){
