@@ -19,14 +19,30 @@ class PublicController extends Controller
 
   public function blog()
   {
-    $post = Post::where('status','publish')->latest()->paginate(1)->onEachSide(1);
-    return view('public.blog', compact('post'));
+    $category_data = Category::all();
+    $post = Post::where('status','publish')->latest()->paginate(1)->onEachSide(0);
+    return view('public.blog', compact('post', 'category_data'));
   }
 
   public function viewblog($slug)
   {
+    $category_data = Category::all();
     $post = Post::where('slug',$slug)->first();
-    return view('public.viewblog', compact('post'));
+    return view('public.viewblog', compact('post','category_data'));
+  }
+
+  public function category(category $category)
+  {
+    $category_data = Category::all();
+    $data = $category->posts()->paginate(10)->onEachSide(1);
+    return view('public.categoryblog', compact('data','category_data'));
+  }
+
+  public function cari(request $request)
+  {
+    $category_data = Category::all();
+    $data = Post::where('judul', $request->cari)->orWhere('judul', 'like', '%'.$request->cari.'%')->paginate(10)->onEachSide(0);
+    return view('public.categoryblog', compact('data','category_data'));
   }
 
 }

@@ -8,6 +8,8 @@ Route::group(['public'], function(){
   Route::get('/', 'PublicController@index')->name('public.home');
   Route::get('/blog', 'PublicController@blog')->name('public.blog');
   Route::get('/blog/{slug}', 'PublicController@viewblog')->name('public.viewblog');
+  Route::get('/kategori/{category}', 'PublicController@category')->name('public.category');
+  Route::get('/cari', 'PublicController@cari')->name('public.cari');
   Route::get('/tentang', 'PublicController@tentang')->name('public.tentang');
   Route::get('/galeri', 'PublicController@galeri')->name('public.galeri');
   Route::get('/kontak', 'PublicController@kontak')->name('public.kontak');

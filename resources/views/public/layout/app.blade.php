@@ -31,7 +31,7 @@
 
 </head>
 
-<body>
+<body>  
 
   <!-- ======= Header ======= -->
   @include('public.layout.menu')

@@ -64,41 +64,25 @@
           <span class="badge badge-primary">{{$tag->name}}</span>
         @endforeach
         <hr>
-        
+
   		</div>
 
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
 
           <!-- Categories Widget -->
-          <div class="card my-3">
-            <h5 class="card-header">Categories</h5>
-            <div class="card-body">
+          <div class="card my-3" style="border-radius:0;">
+            <h4 class="card-header bg-lightseagreen text-white" style="border-radius:0;">Kategori</h4>
+            <div class="card-body" style="border-radius:0;">
               <div class="row">
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">Simba</a>
+                <div class="col-lg-12">
+                  <ul class="list-unstyled">
+                    @foreach($category_data as $list)
+                    <li class="my-1 border-bottom d-flex justify-content-between align-items-center">
+                      <h5><a href="{{route('public.category', $list->slug)}}">{{$list->name}}</h5></a>
+                      <span class="badge badge-lightseagreen badge-pill mx-2 my-2"><strong>{{$list->posts->count()}}</strong></span>
                     </li>
-                    <li>
-                      <a href="#">Nyati</a>
-                    </li>
-                    <li>
-                      <a href="#">Faru</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">Kiboko</a>
-                    </li>
-                    <li>
-                      <a href="#">Fisi</a>
-                    </li>
-                    <li>
-                      <a href="#">Pundamlia</a>
-                    </li>
+                    @endforeach
                   </ul>
                 </div>
               </div>

@@ -1274,6 +1274,9 @@ section {
 ---------------------------------------------------------------------------------*/
 .bg-lightseagreen {
   background-color: lightseagreen !important; }
+.badge.badge-lightseagreen {
+  background: lightseagreen;
+  color: #fff; }
 
 #content-desktop {display: block;}
 #content-mobile {display: none;}

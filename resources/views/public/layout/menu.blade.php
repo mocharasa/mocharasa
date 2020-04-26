@@ -1,9 +1,10 @@
 <div id="myOverlay" class="overlay">
   <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
   <div class="overlay-content">
-    <form action="">
-      <input type="text" placeholder="Search..." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+    <form action="{{route('public.cari')}}" method="get">
+      @csrf
+      <input type="text" placeholder="Search..." name="cari">
+      <button type="submit" class="bg-lightseagreen text-white"><i class="fa fa-search"></i></button>
     </form>
   </div>
 </div>
@@ -19,12 +20,7 @@
 
       <nav class="nav-menu d-none shadow-sm d-lg-block">
         <ul>
-          <li class="active"><a href="{{url('/')}}">Home</a></li>
-          <li><a href="#team">Tentang</a></li>
-		  <li><a href="#about">Profil</a></li>
-          <li><a href="{{url('/blog')}}">Blog</a></li>
-          <li><a href="#portfolio">Galeri</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
+          <!-- <li class="drop-down"><a href="">Drop Down</a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="drop-down"><a href="#">Drop Down 2</a>
@@ -40,9 +36,14 @@
               <li><a href="#">Drop Down 4</a></li>
               <li><a href="#">Drop Down 5</a></li>
             </ul>
-          </li>
+          </li> -->
+          <li class="active"><a href="{{url('/')}}">Home</a></li>
+          <li><a href="#team">Tentang</a></li>
+		      <li><a href="#about">Profil</a></li>
+          <li><a href="{{url('/blog')}}">Blog</a></li>
+          <li><a href="#portfolio">Galeri</a></li>
           <li><a href="#contact">Kontak</a></li>
-		  <li><a href="#" onclick="openSearch()"><i class="bx bx-search"></i> Search</a></li>
+		      <li><a href="#" onclick="openSearch()"><i class="bx bx-search"></i> Search</a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>

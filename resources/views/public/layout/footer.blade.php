@@ -61,9 +61,9 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>2020</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>2020</span></strong>.
       </div>
-      <div class="credits">      
+      <div class="credits">
         <!-- masukkan credit disini -->
       </div>
     </div>

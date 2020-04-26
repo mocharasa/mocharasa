@@ -1,5 +1,5 @@
 @extends('public.layout.app')
-@section('title','Blog terbaru')
+@section('title') @endsection
 @section('breadcrumb')
   <!-- ======= Breadcrumb ======= -->
    <section id="cta" class="cta">
@@ -32,7 +32,7 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8 my-3">
           <!-- Blog Post -->
-          @foreach($post as $row=>$hasil)
+          @foreach($data as $row=>$hasil)
           <div class="card mb-4">
       			<div class="card-badge">{{ $hasil->category['name'] }}</div>
             <a href="{{route('public.viewblog', $hasil->slug)}}">
@@ -55,7 +55,7 @@
           </div>
           @endforeach
           <!-- Pagination -->
-          {{ $post->links() }}
+          {{ $data->links() }}
           <br>
         </div>
 
@@ -88,7 +88,13 @@
               You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
             </div>
           </div>
-
+		  <!-- Side Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">banner</h5>
+            <div class="card-body">
+              <img class="card-img-top" src="https://2.bp.blogspot.com/-vvG5hMTFOro/W6RaoxdAikI/AAAAAAAAK1k/jezYdP7fvfYvt15Jv8a0agrGQE2lMU8YgCKgBGAs/s1600/MASAI-2.jpg" alt="Card image cap">
+            </div>
+          </div>
         </div>
 
       </div>
